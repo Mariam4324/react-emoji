@@ -1,9 +1,6 @@
 .cards_wrapper {
   /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px 19px;
-  padding: 80px 0 50px; */
-
+  grid-template-columns: repeat(3, 1fr); */
   gap: 19px;
   display: flex;
   align-items: center;
