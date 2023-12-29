@@ -4,6 +4,7 @@ import { CardsWrapper } from "../layout/cardsWrapper/CardsWrapper";
 import "./styles/global.css";
 import { data } from "../assets/data";
 import { Cards } from "../components/Cards/Cards";
+import { Pagination } from "../layout/Pagination/Main-switches/Main_switches";
 
 export const App = () => {
   const [inputValue, setInputValue] = useState("");
@@ -37,6 +38,7 @@ export const App = () => {
     <>
       <Layout inputValue={inputValue} inputHandler={inputHandler}>
         <CardsWrapper cards={cards} />
+        <Pagination />
       </Layout>
     </>
   );
