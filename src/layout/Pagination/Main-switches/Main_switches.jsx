@@ -5,7 +5,6 @@ import css from "./main_switches.module.css";
 
 export const Pagination = () => {
 
-
   return (
     <Container>
       <div className={css.flex_wrapper}>
@@ -24,7 +23,6 @@ export const Pagination = () => {
             </a>
           </li>
         </ul>
-
         <Right_list />
       </div>
     </Container>
