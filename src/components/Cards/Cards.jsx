@@ -1,7 +1,11 @@
 import { unicalization } from "../../helpers/unicalization";
-import css from "./cards.module.css";
+import css from "./Cards.module.css";
 
-export const Cards = ({ title, symbol, keywords }) => {
+export const Cards = ({ title, symbol, keywords, spinner }) => {
+  if (spinner) {
+    return <h2>LOADINNGGGGGGGGGGGGGGGGG XD</h2>;
+  }
+
   return (
     <div className={css.card}>
       <h2 className={css.emoji}>{symbol}</h2>

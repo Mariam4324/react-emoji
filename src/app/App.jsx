@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Layout } from "../layout/Layout";
 import { CardsWrapper } from "../layout/cardsWrapper/CardsWrapper";
 import "./styles/global.css";
 import { data } from "../assets/data";
 import { Cards } from "../components/Cards/Cards";
-import { Pagination } from "../layout/Pagination/Main-switches/Main_switches";
+import { Pagination } from "../layout/Pagination/Switches/Switches";
 
 export const App = () => {
   const [inputValue, setInputValue] = useState("");
+  const [spinner, setSpinner] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [limitPage, setLimitPage] = useState(6);
 
   const inputHandler = (ev) => {
     setInputValue(ev.target.value);
@@ -33,6 +36,18 @@ export const App = () => {
         keywords={card.keywords}
       />
     ));
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setSpinner(true);
+      const emojiLink = `http://api.codeoverdose.space/api/emoji?search=${inputValue}&page=${currentPage}&limit=${limitPage}`;
+      const res = await fetch(emojiLink);
+      const emojiJson = await res.json();
+      console.log(emojiJson);
+      setSpinner(false);
+    };
+    fetchData();
+  }, [inputValue, limitPage, currentPage]);
 
   return (
     <>

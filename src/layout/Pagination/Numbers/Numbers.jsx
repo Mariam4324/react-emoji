@@ -1,4 +1,4 @@
-import css from "./numbers.module.css";
+import css from "./Numbers.module.css";
 
 export const Numbers = () => {
   return (

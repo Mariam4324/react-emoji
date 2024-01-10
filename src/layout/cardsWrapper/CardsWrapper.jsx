@@ -1,4 +1,3 @@
-import { Cards } from "../../components/Cards/Cards";
 import { Container } from "../Container/Container";
 import css from "./cardsWrapper.module.css";
 
